@@ -1,0 +1,80 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/*非常重要的样式让背景图片100%适应整个屏幕*/
+
+.bg {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+  color: #fff;
+  background: url(../images/BG3.jpg) repeat bottom center;
+  background-size: cover;
+}
+
+.my-navbar {
+  padding: 20px 0;
+  transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.my-navbar a {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+.my-navbar a:hover {
+  color: #45bcf9 !important;
+  /* 鼠标在上效果 */
+  background: transparent;
+  outline: 0;
+}
+
+.my-navbar a {
+  transition: color 0.5s ease-in-out;
+}
+
+/*-webkit-transition ;-moz-transition*/
+
+.top-nav {
+  padding: 0;
+  background: #000;
+  /* 下拉时的背景颜色 */
+}
+
+button.navbar-toggle {
+  background-color: #000;
+  /* 按钮背景颜色*/
+}
+
+/*整个背景都是transparent透明的，会看不到，所以再次覆盖一下*/
+
+button.navbar-toggle>span.icon-bar {
+  background-color: #ffffff;
+  /* 三个杠的颜色 */
+}
+
+.fr {
+  float: right;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+/* nav - end 
+------------------*/
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+  ------------------*/ .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  /* 轮播图片 结束
+------------*/
+  >>>>>>>demo1

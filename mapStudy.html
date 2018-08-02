@@ -1,0 +1,138 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body,
+        html,
+        #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0z1EHbHibjZCTSeKBggYLD2odhYHUqmM"></script>
+    <!-- 
+         0z1EHbHibjZCTSeKBggYLD2odhYHUqmM  我的ak- 百度账号： 樱幻落燕。
+    -->
+    <title>地图展示</title>
+</head>
+
+<body>
+    <div id="allmap"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap"); // 创建Map实例
+    var url = "http://api.map.baidu.com/location/ip?ak=0z1EHbHibjZCTSeKBggYLD2odhYHUqmM&coor=bd09ll";
+
+    //创建一个点对象，这里的参数是地图上的经纬度  
+    var point = new BMap.Point(116.38, 39.90);
+    console.log(point);
+    //这里是将地图的中心移动到我们刚才创建的点；这里的12是地图的缩放界别；数值越大，地图看的越细  
+    map.centerAndZoom(point, 12);
+
+    //定位  
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function (result) {
+        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var mk = new BMap.Marker(result.point); //创建一个覆盖物  
+            map.addOverlay(mk); //增加一个标示到地图上  
+            addMarker(result.point);
+            latitude = result.point.lat; //获取到的纬度  
+            longitude = result.point.lng; //获取到的经度  
+        }
+    });
+    //自定义图标
+    function addMarker(point) {
+        // 创建图标对象     
+        var myIcon = new BMap.Icon("images/position.png", new BMap.Size(23, 50), {
+            offset: new BMap.Size(10, 25)
+        });
+        // 创建标注对象并添加到地图     
+        var marker = new BMap.Marker(point, {
+            icon: myIcon
+        });
+        map.addOverlay(marker);
+    }
+
+    map.setCurrentCity("西安"); // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body,
+        html,
+        #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0z1EHbHibjZCTSeKBggYLD2odhYHUqmM"></script>
+    <!-- 
+         0z1EHbHibjZCTSeKBggYLD2odhYHUqmM  我的ak- 百度账号： 樱幻落燕。
+    -->
+    <title>地图展示</title>
+</head>
+
+<body>
+    <div id="allmap"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap"); // 创建Map实例
+    var url = "http://api.map.baidu.com/location/ip?ak=0z1EHbHibjZCTSeKBggYLD2odhYHUqmM&coor=bd09ll";
+
+    //创建一个点对象，这里的参数是地图上的经纬度  
+    var point = new BMap.Point(116.38, 39.90);
+    console.log(point);
+    //这里是将地图的中心移动到我们刚才创建的点；这里的12是地图的缩放界别；数值越大，地图看的越细  
+    map.centerAndZoom(point, 12);
+
+    //定位  
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function (result) {
+        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var mk = new BMap.Marker(result.point); //创建一个覆盖物  
+            map.addOverlay(mk); //增加一个标示到地图上  
+            addMarker(result.point);
+            latitude = result.point.lat; //获取到的纬度  
+            longitude = result.point.lng; //获取到的经度  
+        }
+    });
+    //自定义图标
+    function addMarker(point) {
+        // 创建图标对象     
+        var myIcon = new BMap.Icon("images/position.png", new BMap.Size(23, 50), {
+            offset: new BMap.Size(10, 25)
+        });
+        // 创建标注对象并添加到地图     
+        var marker = new BMap.Marker(point, {
+            icon: myIcon
+        });
+        map.addOverlay(marker);
+    }
+
+    map.setCurrentCity("西安"); // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+>>>>>>> demo1
+</script>
